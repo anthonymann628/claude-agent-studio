@@ -1769,8 +1769,76 @@ async function scanCommand(targetPath) {
 }
 
 // cli/src/commands/recommend.ts
-import * as path5 from "node:path";
+import * as path6 from "node:path";
+import * as fs5 from "node:fs";
+import * as readline from "node:readline";
+
+// cli/src/commands/install.ts
 import * as fs4 from "node:fs";
+import * as path5 from "node:path";
+async function installAgentByEntry(entry) {
+  const content = await fetchAgentContent(DEFAULT_CATALOG_URL, entry.file);
+  const agentsDir = getAgentsDir();
+  ensureDir(agentsDir);
+  const filename = path5.basename(entry.file);
+  const destPath = path5.join(agentsDir, filename);
+  fs4.writeFileSync(destPath, content);
+  const appDir = getAppDataDir();
+  const registryPath = path5.join(appDir, "install-registry.json");
+  let registry = { version: "1.0.0", records: [] };
+  try {
+    if (fs4.existsSync(registryPath)) {
+      registry = JSON.parse(fs4.readFileSync(registryPath, "utf-8"));
+    }
+  } catch {
+  }
+  registry.records = registry.records.filter((r) => r.agentId !== entry.id);
+  let version = "unknown";
+  const versionMatch = content.match(/^version:\s*["']?(.+?)["']?\s*$/m);
+  if (versionMatch) version = versionMatch[1];
+  registry.records.push({
+    agentId: entry.id,
+    version,
+    sourceId: "official",
+    installedAt: (/* @__PURE__ */ new Date()).toISOString(),
+    filePath: destPath,
+    originalFile: entry.file
+  });
+  fs4.writeFileSync(registryPath, JSON.stringify(registry, null, 2));
+}
+async function installCommand(agentId) {
+  if (!agentId) {
+    console.error("\n  Usage: agenttoolkitai install <agent-id>\n");
+    process.exit(1);
+  }
+  console.log(`
+  Installing agent: ${agentId}
+`);
+  let manifest;
+  try {
+    manifest = await fetchManifest();
+  } catch (err) {
+    console.error(`  Failed to fetch catalog: ${err instanceof Error ? err.message : err}`);
+    process.exit(1);
+  }
+  const entry = manifest.agents.find((a) => a.id === agentId);
+  if (!entry) {
+    console.error(`  Agent "${agentId}" not found in catalog.`);
+    console.error(`  Available agents: ${manifest.agents.length}`);
+    console.error(`  Try: agenttoolkitai recommend
+`);
+    process.exit(1);
+  }
+  try {
+    await installAgentByEntry(entry);
+  } catch (err) {
+    console.error(`  Failed to install agent: ${err instanceof Error ? err.message : err}`);
+    process.exit(1);
+  }
+  console.log(`  \u2713 Installed: ${entry.name}`);
+  console.log(`  \u2713 Category: ${entry.category || "general"}
+`);
+}
 
 // src/features/scan/recommendation/engine.ts
 var RECOMMENDATION_RULES = [
@@ -2259,7 +2327,7 @@ function generateRecommendations(profile, manifest, packs) {
 
 // cli/src/commands/recommend.ts
 async function recommendCommand(targetPath) {
-  const rootPath = path5.resolve(targetPath || ".");
+  const rootPath = path6.resolve(targetPath || ".");
   console.log(`
   Scanning: ${rootPath}
 `);
@@ -2308,77 +2376,50 @@ async function recommendCommand(targetPath) {
     }
     console.log("");
   }
-  const outputPath = path5.join(rootPath, ".agenttoolkit-recommendations.json");
-  fs4.writeFileSync(outputPath, JSON.stringify({ profile, recommendations: result }, null, 2));
+  const outputPath = path6.join(rootPath, ".agenttoolkit-recommendations.json");
+  fs5.writeFileSync(outputPath, JSON.stringify({ profile, recommendations: result }, null, 2));
   console.log(`  Full results saved to: ${outputPath}
 `);
-}
-
-// cli/src/commands/install.ts
-import * as fs5 from "node:fs";
-import * as path6 from "node:path";
-async function installCommand(agentId) {
-  if (!agentId) {
-    console.error("\n  Usage: agenttoolkitai install <agent-id>\n");
-    process.exit(1);
+  const topAgents = result.agents.slice(0, 5);
+  if (topAgents.length === 0) return;
+  const answer = await promptYesNo(`  Install the top ${topAgents.length} recommended agents now? (Y/n) `);
+  if (!answer) {
+    console.log("\n  Skipped. You can install agents individually:\n");
+    for (const a of topAgents) {
+      console.log(`    agenttoolkitai install ${a.agentId}`);
+    }
+    console.log("");
+    return;
+  }
+  console.log("");
+  let installed = 0;
+  for (const rec of topAgents) {
+    const entry = manifest.agents.find((a) => a.id === rec.agentId);
+    if (!entry) {
+      console.log(`  \u2717 ${rec.agentName} \u2014 not found in catalog`);
+      continue;
+    }
+    try {
+      await installAgentByEntry(entry);
+      console.log(`  \u2713 ${rec.agentName}`);
+      installed++;
+    } catch (err) {
+      console.log(`  \u2717 ${rec.agentName} \u2014 ${err instanceof Error ? err.message : "failed"}`);
+    }
   }
   console.log(`
-  Installing agent: ${agentId}
+  Installed ${installed}/${topAgents.length} agents.
 `);
-  let manifest;
-  try {
-    manifest = await fetchManifest();
-  } catch (err) {
-    console.error(`  Failed to fetch catalog: ${err instanceof Error ? err.message : err}`);
-    process.exit(1);
-  }
-  const entry = manifest.agents.find((a) => a.id === agentId);
-  if (!entry) {
-    console.error(`  Agent "${agentId}" not found in catalog.`);
-    console.error(`  Available agents: ${manifest.agents.length}`);
-    console.error(`  Try: agenttoolkitai recommend
-`);
-    process.exit(1);
-  }
-  let content;
-  try {
-    content = await fetchAgentContent(DEFAULT_CATALOG_URL, entry.file);
-  } catch (err) {
-    console.error(`  Failed to download agent: ${err instanceof Error ? err.message : err}`);
-    process.exit(1);
-  }
-  const agentsDir = getAgentsDir();
-  ensureDir(agentsDir);
-  const filename = path6.basename(entry.file);
-  const destPath = path6.join(agentsDir, filename);
-  fs5.writeFileSync(destPath, content);
-  const appDir = getAppDataDir();
-  const registryPath = path6.join(appDir, "install-registry.json");
-  let registry = { version: "1.0.0", records: [] };
-  try {
-    if (fs5.existsSync(registryPath)) {
-      registry = JSON.parse(fs5.readFileSync(registryPath, "utf-8"));
-    }
-  } catch {
-  }
-  registry.records = registry.records.filter((r) => r.agentId !== agentId);
-  let version = "unknown";
-  const versionMatch = content.match(/^version:\s*["']?(.+?)["']?\s*$/m);
-  if (versionMatch) version = versionMatch[1];
-  registry.records.push({
-    agentId,
-    version,
-    sourceId: "official",
-    installedAt: (/* @__PURE__ */ new Date()).toISOString(),
-    filePath: destPath,
-    originalFile: entry.file
+}
+function promptYesNo(question) {
+  const rl = readline.createInterface({ input: process.stdin, output: process.stdout });
+  return new Promise((resolve5) => {
+    rl.question(question, (answer) => {
+      rl.close();
+      const trimmed = answer.trim().toLowerCase();
+      resolve5(trimmed === "" || trimmed === "y" || trimmed === "yes");
+    });
   });
-  fs5.writeFileSync(registryPath, JSON.stringify(registry, null, 2));
-  console.log(`  \u2713 Installed: ${entry.name}`);
-  console.log(`  \u2713 Version: ${version}`);
-  console.log(`  \u2713 File: ${destPath}`);
-  console.log(`  \u2713 Category: ${entry.category || "general"}
-`);
 }
 
 // cli/src/commands/doctor.ts

@@ -1,42 +1,15 @@
 import * as fs from "node:fs";
 import * as path from "node:path";
 import { fetchManifest, fetchAgentContent, getAgentsDir, getAppDataDir, ensureDir, DEFAULT_CATALOG_URL } from "../catalog";
+import type { CatalogManifest, CatalogAgentEntry } from "../catalog";
 
-export async function installCommand(agentId: string): Promise<void> {
-  if (!agentId) {
-    console.error("\n  Usage: agenttoolkitai install <agent-id>\n");
-    process.exit(1);
-  }
+/**
+ * Install a single agent by entry. Reusable core that does not call process.exit.
+ * Requires a pre-fetched manifest so callers who already have one avoid re-fetching.
+ */
+export async function installAgentByEntry(entry: CatalogAgentEntry): Promise<void> {
+  const content = await fetchAgentContent(DEFAULT_CATALOG_URL, entry.file);
 
-  console.log(`\n  Installing agent: ${agentId}\n`);
-
-  // Fetch manifest to find the agent
-  let manifest;
-  try {
-    manifest = await fetchManifest();
-  } catch (err) {
-    console.error(`  Failed to fetch catalog: ${err instanceof Error ? err.message : err}`);
-    process.exit(1);
-  }
-
-  const entry = manifest.agents.find(a => a.id === agentId);
-  if (!entry) {
-    console.error(`  Agent "${agentId}" not found in catalog.`);
-    console.error(`  Available agents: ${manifest.agents.length}`);
-    console.error(`  Try: agenttoolkitai recommend\n`);
-    process.exit(1);
-  }
-
-  // Fetch agent content
-  let content;
-  try {
-    content = await fetchAgentContent(DEFAULT_CATALOG_URL, entry.file);
-  } catch (err) {
-    console.error(`  Failed to download agent: ${err instanceof Error ? err.message : err}`);
-    process.exit(1);
-  }
-
-  // Write to agents directory
   const agentsDir = getAgentsDir();
   ensureDir(agentsDir);
 
@@ -54,16 +27,14 @@ export async function installCommand(agentId: string): Promise<void> {
     }
   } catch {}
 
-  // Remove existing record for this agent
-  registry.records = registry.records.filter((r: any) => r.agentId !== agentId);
+  registry.records = registry.records.filter((r: any) => r.agentId !== entry.id);
 
-  // Parse version from frontmatter
   let version = "unknown";
   const versionMatch = content.match(/^version:\s*["']?(.+?)["']?\s*$/m);
   if (versionMatch) version = versionMatch[1];
 
   registry.records.push({
-    agentId,
+    agentId: entry.id,
     version,
     sourceId: "official",
     installedAt: new Date().toISOString(),
@@ -72,9 +43,39 @@ export async function installCommand(agentId: string): Promise<void> {
   });
 
   fs.writeFileSync(registryPath, JSON.stringify(registry, null, 2));
+}
+
+export async function installCommand(agentId: string): Promise<void> {
+  if (!agentId) {
+    console.error("\n  Usage: agenttoolkitai install <agent-id>\n");
+    process.exit(1);
+  }
+
+  console.log(`\n  Installing agent: ${agentId}\n`);
+
+  let manifest;
+  try {
+    manifest = await fetchManifest();
+  } catch (err) {
+    console.error(`  Failed to fetch catalog: ${err instanceof Error ? err.message : err}`);
+    process.exit(1);
+  }
+
+  const entry = manifest.agents.find(a => a.id === agentId);
+  if (!entry) {
+    console.error(`  Agent "${agentId}" not found in catalog.`);
+    console.error(`  Available agents: ${manifest.agents.length}`);
+    console.error(`  Try: agenttoolkitai recommend\n`);
+    process.exit(1);
+  }
+
+  try {
+    await installAgentByEntry(entry);
+  } catch (err) {
+    console.error(`  Failed to install agent: ${err instanceof Error ? err.message : err}`);
+    process.exit(1);
+  }
 
   console.log(`  ✓ Installed: ${entry.name}`);
-  console.log(`  ✓ Version: ${version}`);
-  console.log(`  ✓ File: ${destPath}`);
   console.log(`  ✓ Category: ${entry.category || "general"}\n`);
 }
