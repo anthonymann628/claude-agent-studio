@@ -1,0 +1,33 @@
+{
+  "name": "agenttoolkitai",
+  "version": "0.1.2",
+  "description": "The open-source operating system for Claude Code agents. Scan your repo, get agent recommendations, install specialists.",
+  "type": "module",
+  "bin": {
+    "agenttoolkitai": "index.js"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "ai",
+    "claude",
+    "claude-code",
+    "ai-agents",
+    "developer-tools",
+    "automation",
+    "llm",
+    "agent-framework"
+  ],
+  "author": "Anthony Mann",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/anthonymann628/claude-agent-studio.git",
+    "directory": "cli"
+  },
+  "homepage": "https://github.com/anthonymann628/claude-agent-studio",
+  "engines": {
+    "node": ">=18"
+  }
+}

@@ -2380,12 +2380,12 @@ async function recommendCommand(targetPath) {
   fs5.writeFileSync(outputPath, JSON.stringify({ profile, recommendations: result }, null, 2));
   console.log(`  Full results saved to: ${outputPath}
 `);
-  const topAgents = result.agents.slice(0, 5);
-  if (topAgents.length === 0) return;
-  const answer = await promptYesNo(`  Install the top ${topAgents.length} recommended agents now? (Y/n) `);
+  const allAgents = result.agents;
+  if (allAgents.length === 0) return;
+  const answer = await promptYesNo(`  Install all ${allAgents.length} recommended agents now? (Y/n) `);
   if (!answer) {
     console.log("\n  Skipped. You can install agents individually:\n");
-    for (const a of topAgents) {
+    for (const a of allAgents) {
       console.log(`    agenttoolkitai install ${a.agentId}`);
     }
     console.log("");
@@ -2393,7 +2393,7 @@ async function recommendCommand(targetPath) {
   }
   console.log("");
   let installed = 0;
-  for (const rec of topAgents) {
+  for (const rec of allAgents) {
     const entry = manifest.agents.find((a) => a.id === rec.agentId);
     if (!entry) {
       console.log(`  \u2717 ${rec.agentName} \u2014 not found in catalog`);
@@ -2408,7 +2408,7 @@ async function recommendCommand(targetPath) {
     }
   }
   console.log(`
-  Installed ${installed}/${topAgents.length} agents.
+  Installed ${installed}/${allAgents.length} agents.
 `);
 }
 function promptYesNo(question) {
