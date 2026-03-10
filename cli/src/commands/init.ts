@@ -2,8 +2,17 @@ import * as fs from "node:fs";
 import * as path from "node:path";
 import { getAgentsDir, getAppDataDir, ensureDir, DEFAULT_CATALOG_URL } from "../catalog";
 
+const BANNER = `
+    _                    _     _____           _ _    _ _
+   / \\   __ _  ___ _ __ | |_  |_   _|__   ___ | | | _(_) |_
+  / _ \\ / _\` |/ _ \\ '_ \\| __|   | |/ _ \\ / _ \\| | |/ / | __|
+ / ___ \\ (_| |  __/ | | | |_    | | (_) | (_) | |   <| | |_
+/_/   \\_\\__, |\\___|_| |_|\\__|   |_|\\___/ \\___/|_|_|\\_\\_|\\__|
+        |___/                              \x1b[36mfor Claude\x1b[0m
+`;
+
 export async function initCommand(): Promise<void> {
-  console.log("\n  agenttoolkitai — Claude Agent Studio CLI\n");
+  console.log(BANNER);
   console.log("  Initializing...\n");
 
   const appDir = getAppDataDir();

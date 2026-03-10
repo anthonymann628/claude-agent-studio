@@ -42,8 +42,16 @@ function ensureDir(dir) {
 }
 
 // cli/src/commands/init.ts
+var BANNER = `
+    _                    _     _____           _ _    _ _
+   / \\   __ _  ___ _ __ | |_  |_   _|__   ___ | | | _(_) |_
+  / _ \\ / _\` |/ _ \\ '_ \\| __|   | |/ _ \\ / _ \\| | |/ / | __|
+ / ___ \\ (_| |  __/ | | | |_    | | (_) | (_) | |   <| | |_
+/_/   \\_\\__, |\\___|_| |_|\\__|   |_|\\___/ \\___/|_|_|\\_\\_|\\__|
+        |___/                              \x1B[36mfor Claude\x1B[0m
+`;
 async function initCommand() {
-  console.log("\n  agenttoolkitai \u2014 Claude Agent Studio CLI\n");
+  console.log(BANNER);
   console.log("  Initializing...\n");
   const appDir = getAppDataDir();
   const agentsDir = getAgentsDir();
