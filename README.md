@@ -1,6 +1,14 @@
-# Claude Agent Studio
+<p align="center">
+  <img src="assets/logo.png" alt="Agent Toolkit AI for Claude" width="400" />
+</p>
 
-**The open-source operating system for Claude Code agents.**
+<h1 align="center">Claude Agent Studio</h1>
+
+<p align="center"><strong>The open-source operating system for Claude Code agents.</strong></p>
+
+<p align="center">
+  <em>Discover &bull; Install &bull; Generate &bull; Manage &bull; Unlock Claude's Full Potential</em>
+</p>
 
 ```bash
 npx agenttoolkitai init
