@@ -1,3 +1,288 @@
 {
-  "packs": []
+  "packs": [
+    {
+      "id": "full-stack-engineer",
+      "name": "Full-Stack Engineer",
+      "version": "1.0.0",
+      "description": "Complete engineering toolkit for full-stack development teams",
+      "rationale": "Covers the full development lifecycle from architecture to deployment with testing, debugging, and code quality agents.",
+      "agents": [
+        "backend-architect",
+        "api-designer",
+        "database-engineer",
+        "react-specialist",
+        "typescript-expert",
+        "code-reviewer",
+        "testing-strategist",
+        "debugging-specialist",
+        "git-workflow-advisor",
+        "performance-optimizer"
+      ]
+    },
+    {
+      "id": "frontend-excellence",
+      "name": "Frontend Excellence",
+      "version": "1.0.0",
+      "description": "Build world-class frontend applications with modern React and design systems",
+      "rationale": "Comprehensive frontend coverage from React components to testing, accessibility, and performance optimization.",
+      "agents": [
+        "react-specialist",
+        "nextjs-developer",
+        "typescript-expert",
+        "css-architect",
+        "accessibility-auditor",
+        "ui-component-builder",
+        "design-system-architect",
+        "state-management-advisor",
+        "web-performance-analyst",
+        "frontend-testing-engineer",
+        "animation-developer"
+      ]
+    },
+    {
+      "id": "devops-pipeline",
+      "name": "DevOps Pipeline",
+      "version": "1.0.0",
+      "description": "End-to-end DevOps toolchain for cloud-native infrastructure",
+      "rationale": "From containerization through deployment to monitoring, covers the complete DevOps lifecycle.",
+      "agents": [
+        "docker-specialist",
+        "kubernetes-engineer",
+        "ci-cd-architect",
+        "terraform-engineer",
+        "aws-solutions-architect",
+        "monitoring-engineer",
+        "release-manager",
+        "platform-engineer",
+        "cloud-cost-optimizer",
+        "incident-response-coordinator"
+      ]
+    },
+    {
+      "id": "security-fortress",
+      "name": "Security Fortress",
+      "version": "1.0.0",
+      "description": "Comprehensive application and infrastructure security coverage",
+      "rationale": "Defense-in-depth security from code review to cloud infrastructure, compliance, and incident response.",
+      "agents": [
+        "security-auditor",
+        "auth-architect",
+        "api-security-specialist",
+        "cloud-security-engineer",
+        "devsecops-engineer",
+        "threat-modeler",
+        "secrets-manager",
+        "supply-chain-security",
+        "compliance-advisor",
+        "data-privacy-engineer",
+        "penetration-tester",
+        "incident-forensics-analyst"
+      ]
+    },
+    {
+      "id": "data-platform",
+      "name": "Data Platform",
+      "version": "1.0.0",
+      "description": "Build and operate a modern data platform from pipelines to analytics",
+      "rationale": "Complete data stack from ingestion and transformation to visualization and governance.",
+      "agents": [
+        "data-pipeline-engineer",
+        "sql-expert",
+        "data-modeling-specialist",
+        "analytics-engineer",
+        "data-quality-engineer",
+        "data-visualization-specialist",
+        "streaming-data-engineer",
+        "data-lake-architect",
+        "data-governance-advisor",
+        "business-intelligence-analyst"
+      ]
+    },
+    {
+      "id": "ai-builder",
+      "name": "AI Builder",
+      "version": "1.0.0",
+      "description": "Build production AI applications with LLMs, RAG, and agents",
+      "rationale": "Everything needed to design, build, evaluate, and operate AI-powered applications.",
+      "agents": [
+        "prompt-engineer",
+        "llm-application-architect",
+        "ai-agent-builder",
+        "embedding-specialist",
+        "knowledge-base-architect",
+        "evaluation-specialist",
+        "ai-safety-reviewer",
+        "ml-ops-engineer",
+        "ai-cost-optimizer",
+        "fine-tuning-specialist"
+      ]
+    },
+    {
+      "id": "product-team",
+      "name": "Product Team",
+      "version": "1.0.0",
+      "description": "Full product management toolkit from research to launch",
+      "rationale": "Covers the product lifecycle: research, specification, design, launch, and growth.",
+      "agents": [
+        "product-manager",
+        "product-analyst",
+        "user-researcher",
+        "ux-strategist",
+        "feature-spec-writer",
+        "onboarding-designer",
+        "growth-product-manager",
+        "pricing-strategist",
+        "product-launch-coordinator",
+        "feedback-analyst"
+      ]
+    },
+    {
+      "id": "startup-launchpad",
+      "name": "Startup Launchpad",
+      "version": "1.0.0",
+      "description": "Everything a startup founder needs from idea to funding",
+      "rationale": "Covers business model validation, MVP scoping, fundraising, legal basics, and go-to-market.",
+      "agents": [
+        "startup-advisor",
+        "lean-canvas-builder",
+        "mvp-scoper",
+        "pitch-deck-creator",
+        "fundraising-strategist",
+        "unit-economics-analyst",
+        "go-to-market-strategist",
+        "technical-cofounder-advisor",
+        "startup-legal-advisor",
+        "investor-update-writer"
+      ]
+    },
+    {
+      "id": "growth-marketing",
+      "name": "Growth Marketing",
+      "version": "1.0.0",
+      "description": "Full-funnel marketing from acquisition to conversion optimization",
+      "rationale": "Covers SEO, paid ads, content, email, and analytics for data-driven marketing teams.",
+      "agents": [
+        "seo-strategist",
+        "search-engine-submission-specialist",
+        "content-marketing-strategist",
+        "paid-ads-specialist",
+        "conversion-rate-optimizer",
+        "marketing-analytics-specialist",
+        "email-campaign-strategist",
+        "marketing-automation-specialist",
+        "brand-strategist",
+        "community-manager",
+        "video-marketing-strategist"
+      ]
+    },
+    {
+      "id": "content-studio",
+      "name": "Content Studio",
+      "version": "1.0.0",
+      "description": "Complete content creation toolkit across all formats and channels",
+      "rationale": "From blog posts to ad copy to video scripts, covers every content format a team needs.",
+      "agents": [
+        "blog-writer",
+        "landing-page-copywriter",
+        "ad-copywriter",
+        "sales-copywriter",
+        "email-copywriter",
+        "scriptwriter",
+        "case-study-writer",
+        "technical-writer",
+        "brand-voice-developer",
+        "ux-writer"
+      ]
+    },
+    {
+      "id": "social-media-command",
+      "name": "Social Media Command",
+      "version": "1.0.0",
+      "description": "Multi-platform social media management and content creation",
+      "rationale": "Covers all major social platforms with analytics, planning, and crisis management.",
+      "agents": [
+        "twitter-strategist",
+        "linkedin-content-creator",
+        "instagram-strategist",
+        "tiktok-content-strategist",
+        "youtube-strategist",
+        "social-media-calendar-planner",
+        "social-media-analytics-specialist",
+        "reddit-marketing-specialist",
+        "podcast-producer",
+        "social-media-crisis-manager"
+      ]
+    },
+    {
+      "id": "email-mastery",
+      "name": "Email Mastery",
+      "version": "1.0.0",
+      "description": "Complete email marketing operations from strategy to deliverability",
+      "rationale": "Covers the full email lifecycle: strategy, copywriting, design, automation, and deliverability.",
+      "agents": [
+        "email-campaign-strategist",
+        "email-copywriter",
+        "email-deliverability-expert",
+        "newsletter-architect",
+        "drip-campaign-designer",
+        "transactional-email-designer",
+        "email-template-developer",
+        "cold-email-specialist"
+      ]
+    },
+    {
+      "id": "business-operations",
+      "name": "Business Operations",
+      "version": "1.0.0",
+      "description": "Core business operations toolkit for growing companies",
+      "rationale": "Covers hiring, sales, operations, finance, and business process optimization.",
+      "agents": [
+        "business-plan-writer",
+        "financial-modeler",
+        "operations-optimizer",
+        "hiring-manager-advisor",
+        "sales-strategist",
+        "customer-success-strategist",
+        "contract-reviewer",
+        "okr-coach",
+        "meeting-facilitator",
+        "business-process-automator"
+      ]
+    },
+    {
+      "id": "code-quality",
+      "name": "Code Quality",
+      "version": "1.0.0",
+      "description": "Maintain high code quality through reviews, testing, and debt management",
+      "rationale": "Focused on code quality: reviews, refactoring, testing, documentation, and technical debt.",
+      "agents": [
+        "code-reviewer",
+        "refactoring-coach",
+        "testing-strategist",
+        "technical-debt-analyst",
+        "documentation-writer",
+        "dependency-manager",
+        "debugging-specialist"
+      ]
+    },
+    {
+      "id": "saas-founder",
+      "name": "SaaS Founder",
+      "version": "1.0.0",
+      "description": "Essential agents for building and scaling a SaaS business",
+      "rationale": "Combines product, engineering, growth, and business agents optimized for SaaS companies.",
+      "agents": [
+        "product-manager",
+        "mvp-scoper",
+        "pricing-strategist",
+        "onboarding-designer",
+        "growth-product-manager",
+        "unit-economics-analyst",
+        "customer-success-strategist",
+        "email-campaign-strategist",
+        "seo-strategist",
+        "conversion-rate-optimizer"
+      ]
+    }
+  ]
 }

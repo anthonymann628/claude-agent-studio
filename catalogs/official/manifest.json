@@ -1,5 +1,1214 @@
 {
   "name": "Claude Agent Studio Official Catalog",
-  "version": "0.1.0",
-  "agents": []
+  "version": "1.0.0",
+  "agents": [
+    {
+      "id": "accessibility-auditor",
+      "name": "Accessibility Auditor",
+      "category": "frontend",
+      "model": "claude-opus-4-6",
+      "description": "Audits web applications for WCAG compliance and inclusive design",
+      "file": "agents/accessibility-auditor.md"
+    },
+    {
+      "id": "ad-copywriter",
+      "name": "Ad Copywriter",
+      "category": "copywriting",
+      "model": "claude-opus-4-6",
+      "description": "Writes high-converting PPC ads, social ads, display copy, and headline variations",
+      "file": "agents/ad-copywriter.md"
+    },
+    {
+      "id": "affiliate-marketing-specialist",
+      "name": "Affiliate Marketing Specialist",
+      "category": "marketing",
+      "model": "claude-opus-4-6",
+      "description": "Builds partner programs, commission structures, and affiliate tracking systems",
+      "file": "agents/affiliate-marketing-specialist.md"
+    },
+    {
+      "id": "ai-agent-builder",
+      "name": "AI Agent Builder",
+      "category": "ai-llm",
+      "model": "claude-opus-4-6",
+      "description": "Builds AI agents with tool use, planning loops, memory, and orchestration",
+      "file": "agents/ai-agent-builder.md"
+    },
+    {
+      "id": "ai-cost-optimizer",
+      "name": "AI Cost Optimizer",
+      "category": "ai-llm",
+      "model": "claude-opus-4-6",
+      "description": "Optimizes LLM token usage, caching strategies, and model routing for cost efficiency",
+      "file": "agents/ai-cost-optimizer.md"
+    },
+    {
+      "id": "ai-safety-reviewer",
+      "name": "AI Safety Reviewer",
+      "category": "ai-llm",
+      "model": "claude-opus-4-6",
+      "description": "Reviews AI systems for safety guardrails, content filtering, and bias detection",
+      "file": "agents/ai-safety-reviewer.md"
+    },
+    {
+      "id": "analytics-engineer",
+      "name": "Analytics Engineer",
+      "category": "data",
+      "model": "claude-opus-4-6",
+      "description": "Builds dbt models, data transformations, and metrics layers",
+      "file": "agents/analytics-engineer.md"
+    },
+    {
+      "id": "animation-developer",
+      "name": "Animation Developer",
+      "category": "frontend",
+      "model": "claude-opus-4-6",
+      "description": "Creates performant animations, transitions, and micro-interactions",
+      "file": "agents/animation-developer.md"
+    },
+    {
+      "id": "api-designer",
+      "name": "API Designer",
+      "category": "engineering",
+      "model": "claude-opus-4-6",
+      "description": "Designs RESTful and GraphQL APIs with consistent conventions and best practices",
+      "file": "agents/api-designer.md"
+    },
+    {
+      "id": "api-security-specialist",
+      "name": "API Security Specialist",
+      "category": "security",
+      "model": "claude-opus-4-6",
+      "description": "Secures APIs with rate limiting, input validation, CORS, and access controls",
+      "file": "agents/api-security-specialist.md"
+    },
+    {
+      "id": "auth-architect",
+      "name": "Auth Architect",
+      "category": "security",
+      "model": "claude-opus-4-6",
+      "description": "Designs OAuth, JWT, SSO, RBAC, and secure authentication flows",
+      "file": "agents/auth-architect.md"
+    },
+    {
+      "id": "aws-solutions-architect",
+      "name": "AWS Solutions Architect",
+      "category": "devops",
+      "model": "claude-opus-4-6",
+      "description": "Designs AWS architectures, selects services, and optimizes cloud costs",
+      "file": "agents/aws-solutions-architect.md"
+    },
+    {
+      "id": "backend-architect",
+      "name": "Backend Architect",
+      "category": "engineering",
+      "model": "claude-opus-4-6",
+      "description": "Designs scalable backend systems, APIs, and database architectures",
+      "file": "agents/backend-architect.md"
+    },
+    {
+      "id": "blog-writer",
+      "name": "Blog Writer",
+      "category": "copywriting",
+      "model": "claude-opus-4-6",
+      "description": "Creates engaging long-form blog content optimized for SEO, reader engagement, and thought leadership with structured formatting, compelling narratives, and strategic keyword integration.",
+      "file": "agents/blog-writer.md"
+    },
+    {
+      "id": "brand-strategist",
+      "name": "Brand Strategist",
+      "category": "marketing",
+      "model": "claude-opus-4-6",
+      "description": "Expert brand strategist specializing in brand positioning, messaging framework development, brand voice and identity systems, and competitive differentiation strategies.",
+      "file": "agents/brand-strategist.md"
+    },
+    {
+      "id": "brand-voice-developer",
+      "name": "Brand Voice Developer",
+      "category": "copywriting",
+      "model": "claude-opus-4-6",
+      "description": "Creates comprehensive brand voice guidelines including tone matrices, vocabulary standards, style guides, and voice principles that ensure consistent, authentic communication across all channels.",
+      "file": "agents/brand-voice-developer.md"
+    },
+    {
+      "id": "business-intelligence-analyst",
+      "name": "Business Intelligence Analyst",
+      "category": "data",
+      "model": "claude-opus-4-6",
+      "description": "Builds KPI dashboards, executive reports, and business performance analytics",
+      "file": "agents/business-intelligence-analyst.md"
+    },
+    {
+      "id": "business-plan-writer",
+      "name": "Business Plan Writer",
+      "category": "business",
+      "model": "claude-opus-4-6",
+      "description": "Drafts comprehensive business plans with executive summaries, market analysis, financial projections, and go-to-market strategies",
+      "file": "agents/business-plan-writer.md"
+    },
+    {
+      "id": "business-process-automator",
+      "name": "Business Process Automator",
+      "category": "business",
+      "model": "claude-opus-4-6",
+      "description": "Designs automation workflows, maps system integrations, and builds implementation plans for business process automation",
+      "file": "agents/business-process-automator.md"
+    },
+    {
+      "id": "case-study-writer",
+      "name": "Case Study Writer",
+      "category": "copywriting",
+      "model": "claude-opus-4-6",
+      "description": "Writes compelling customer success stories, results narratives, and testimonials",
+      "file": "agents/case-study-writer.md"
+    },
+    {
+      "id": "change-management-advisor",
+      "name": "Change Management Advisor",
+      "category": "business",
+      "model": "claude-opus-4-6",
+      "description": "Guides organizational change initiatives with stakeholder analysis, communication plans, resistance management, and adoption tracking",
+      "file": "agents/change-management-advisor.md"
+    },
+    {
+      "id": "ci-cd-architect",
+      "name": "CI/CD Architect",
+      "category": "devops",
+      "model": "claude-opus-4-6",
+      "description": "Designs CI/CD pipelines, GitHub Actions workflows, and deployment strategies",
+      "file": "agents/ci-cd-architect.md"
+    },
+    {
+      "id": "cloud-cost-optimizer",
+      "name": "Cloud Cost Optimizer",
+      "category": "devops",
+      "model": "claude-opus-4-6",
+      "description": "Implements FinOps practices for cloud cost optimization and right-sizing",
+      "file": "agents/cloud-cost-optimizer.md"
+    },
+    {
+      "id": "cloud-security-engineer",
+      "name": "Cloud Security Engineer",
+      "category": "security",
+      "model": "claude-opus-4-6",
+      "description": "Secures cloud infrastructure with IAM, network policies, and encryption",
+      "file": "agents/cloud-security-engineer.md"
+    },
+    {
+      "id": "code-migration-specialist",
+      "name": "Code Migration Specialist",
+      "category": "engineering",
+      "model": "claude-opus-4-6",
+      "description": "Plans and executes language, framework, and platform migrations safely",
+      "file": "agents/code-migration-specialist.md"
+    },
+    {
+      "id": "code-reviewer",
+      "name": "Code Reviewer",
+      "category": "engineering",
+      "model": "claude-opus-4-6",
+      "description": "Reviews code changes for correctness, style, performance, and security vulnerabilities",
+      "file": "agents/code-reviewer.md"
+    },
+    {
+      "id": "cold-email-specialist",
+      "name": "Cold Email Specialist",
+      "category": "email",
+      "model": "claude-opus-4-6",
+      "description": "Crafts effective outbound cold email sequences with deep personalization, compelling value propositions, strategic follow-up cadences, and compliance-aware prospecting approaches.",
+      "file": "agents/cold-email-specialist.md"
+    },
+    {
+      "id": "community-manager",
+      "name": "Community Manager",
+      "category": "marketing",
+      "model": "claude-opus-4-6",
+      "description": "Expert community manager specializing in online community building, member engagement strategies, content moderation frameworks, and community-driven growth programs.",
+      "file": "agents/community-manager.md"
+    },
+    {
+      "id": "competitive-analyst",
+      "name": "Competitive Analyst",
+      "category": "product",
+      "model": "claude-opus-4-6",
+      "description": "Performs market research, feature comparisons, and competitive positioning analysis",
+      "file": "agents/competitive-analyst.md"
+    },
+    {
+      "id": "compliance-advisor",
+      "name": "Compliance Advisor",
+      "category": "security",
+      "model": "claude-opus-4-6",
+      "description": "Guides SOC2, GDPR, HIPAA, and PCI-DSS compliance implementation",
+      "file": "agents/compliance-advisor.md"
+    },
+    {
+      "id": "content-marketing-strategist",
+      "name": "Content Marketing Strategist",
+      "category": "marketing",
+      "model": "claude-opus-4-6",
+      "description": "Strategic content marketing specialist focused on content calendar development, topic cluster architecture, multi-channel content distribution, and audience engagement optimization.",
+      "file": "agents/content-marketing-strategist.md"
+    },
+    {
+      "id": "contract-reviewer",
+      "name": "Contract Reviewer",
+      "category": "business",
+      "model": "claude-opus-4-6",
+      "description": "Reviews SaaS agreements, vendor contracts, and business agreements to identify red flags, unfavorable terms, and negotiation opportunities",
+      "file": "agents/contract-reviewer.md"
+    },
+    {
+      "id": "conversational-ai-designer",
+      "name": "Conversational AI Designer",
+      "category": "ai-llm",
+      "model": "claude-opus-4-6",
+      "description": "Designs chatbot conversation flows, dialog management, and user interactions",
+      "file": "agents/conversational-ai-designer.md"
+    },
+    {
+      "id": "conversion-rate-optimizer",
+      "name": "Conversion Rate Optimizer",
+      "category": "marketing",
+      "model": "claude-opus-4-6",
+      "description": "Specialized conversion rate optimization expert focused on landing page optimization, A/B testing methodology, funnel analysis, and user experience improvements that maximize conversion rates and revenue per visitor.",
+      "file": "agents/conversion-rate-optimizer.md"
+    },
+    {
+      "id": "css-architect",
+      "name": "CSS Architect",
+      "category": "frontend",
+      "model": "claude-opus-4-6",
+      "description": "Designs scalable CSS architectures, responsive layouts, and design systems",
+      "file": "agents/css-architect.md"
+    },
+    {
+      "id": "customer-success-strategist",
+      "name": "Customer Success Strategist",
+      "category": "business",
+      "model": "claude-opus-4-6",
+      "description": "Designs onboarding programs, health scoring systems, retention strategies, and expansion playbooks for customer success teams",
+      "file": "agents/customer-success-strategist.md"
+    },
+    {
+      "id": "data-governance-advisor",
+      "name": "Data Governance Advisor",
+      "category": "data",
+      "model": "claude-opus-4-6",
+      "description": "Establishes data catalogs, lineage tracking, and access governance policies",
+      "file": "agents/data-governance-advisor.md"
+    },
+    {
+      "id": "data-lake-architect",
+      "name": "Data Lake Architect",
+      "category": "data",
+      "model": "claude-opus-4-6",
+      "description": "Designs data lake architectures, storage formats, and partitioning strategies",
+      "file": "agents/data-lake-architect.md"
+    },
+    {
+      "id": "data-modeling-specialist",
+      "name": "Data Modeling Specialist",
+      "category": "data",
+      "model": "claude-opus-4-6",
+      "description": "Designs star schemas, dimensional models, and data normalization strategies",
+      "file": "agents/data-modeling-specialist.md"
+    },
+    {
+      "id": "data-pipeline-engineer",
+      "name": "Data Pipeline Engineer",
+      "category": "data",
+      "model": "claude-opus-4-6",
+      "description": "Designs ETL/ELT pipelines, data orchestration, and Airflow workflows",
+      "file": "agents/data-pipeline-engineer.md"
+    },
+    {
+      "id": "data-privacy-engineer",
+      "name": "Data Privacy Engineer",
+      "category": "security",
+      "model": "claude-opus-4-6",
+      "description": "Implements data classification, anonymization, retention policies, and privacy controls",
+      "file": "agents/data-privacy-engineer.md"
+    },
+    {
+      "id": "data-quality-engineer",
+      "name": "Data Quality Engineer",
+      "category": "data",
+      "model": "claude-opus-4-6",
+      "description": "Implements data validation, monitoring, quality contracts, and anomaly detection",
+      "file": "agents/data-quality-engineer.md"
+    },
+    {
+      "id": "data-visualization-specialist",
+      "name": "Data Visualization Specialist",
+      "category": "data",
+      "model": "claude-opus-4-6",
+      "description": "Creates effective charts, dashboards, and data storytelling visualizations",
+      "file": "agents/data-visualization-specialist.md"
+    },
+    {
+      "id": "database-engineer",
+      "name": "Database Engineer",
+      "category": "engineering",
+      "model": "claude-opus-4-6",
+      "description": "Designs database schemas, writes migrations, and optimizes query performance",
+      "file": "agents/database-engineer.md"
+    },
+    {
+      "id": "debugging-specialist",
+      "name": "Debugging Specialist",
+      "category": "engineering",
+      "model": "claude-opus-4-6",
+      "description": "Expert root cause analysis, systematic debugging workflows, and issue resolution",
+      "file": "agents/debugging-specialist.md"
+    },
+    {
+      "id": "dependency-manager",
+      "name": "Dependency Manager",
+      "category": "engineering",
+      "model": "claude-opus-4-6",
+      "description": "Audits dependencies, plans upgrades, and manages vulnerability remediation",
+      "file": "agents/dependency-manager.md"
+    },
+    {
+      "id": "design-system-architect",
+      "name": "Design System Architect",
+      "category": "frontend",
+      "model": "claude-opus-4-6",
+      "description": "Designs and maintains component libraries, design tokens, and system documentation",
+      "file": "agents/design-system-architect.md"
+    },
+    {
+      "id": "devsecops-engineer",
+      "name": "DevSecOps Engineer",
+      "category": "security",
+      "model": "claude-opus-4-6",
+      "description": "Integrates security into CI/CD with SAST, DAST, and policy-as-code",
+      "file": "agents/devsecops-engineer.md"
+    },
+    {
+      "id": "docker-specialist",
+      "name": "Docker Specialist",
+      "category": "devops",
+      "model": "claude-opus-4-6",
+      "description": "Optimizes Dockerfiles, multi-stage builds, and container orchestration with Compose",
+      "file": "agents/docker-specialist.md"
+    },
+    {
+      "id": "documentation-writer",
+      "name": "Documentation Writer",
+      "category": "engineering",
+      "model": "claude-opus-4-6",
+      "description": "Creates clear API docs, READMEs, architecture guides, and developer documentation",
+      "file": "agents/documentation-writer.md"
+    },
+    {
+      "id": "drip-campaign-designer",
+      "name": "Drip Campaign Designer",
+      "category": "email",
+      "model": "claude-opus-4-6",
+      "description": "Designs automated email nurture sequences with trigger-based logic, behavioral branching, timing optimization, and progressive engagement strategies that guide subscribers toward conversion.",
+      "file": "agents/drip-campaign-designer.md"
+    },
+    {
+      "id": "email-campaign-strategist",
+      "name": "Email Campaign Strategist",
+      "category": "email",
+      "model": "claude-opus-4-6",
+      "description": "Plans and optimizes email marketing campaigns including audience segmentation, automation sequences, A/B testing strategies, and performance analysis to maximize engagement and conversions.",
+      "file": "agents/email-campaign-strategist.md"
+    },
+    {
+      "id": "email-copywriter",
+      "name": "Email Copywriter",
+      "category": "email",
+      "model": "claude-opus-4-6",
+      "description": "Crafts compelling email copy including subject lines, preview text, body content, and CTAs optimized for engagement, conversion, and brand consistency across all email types.",
+      "file": "agents/email-copywriter.md"
+    },
+    {
+      "id": "email-deliverability-expert",
+      "name": "Email Deliverability Expert",
+      "category": "email",
+      "model": "claude-opus-4-6",
+      "description": "Ensures emails reach the inbox by managing authentication protocols (SPF, DKIM, DMARC), IP warming schedules, sender reputation, list hygiene, and compliance with ISP requirements.",
+      "file": "agents/email-deliverability-expert.md"
+    },
+    {
+      "id": "email-template-developer",
+      "name": "Email Template Developer",
+      "category": "email",
+      "model": "claude-opus-4-6",
+      "description": "Builds production-ready HTML email templates with responsive design, dark mode support, cross-client compatibility, and modular component systems for scalable email production.",
+      "file": "agents/email-template-developer.md"
+    },
+    {
+      "id": "embedding-specialist",
+      "name": "Embedding Specialist",
+      "category": "ai-llm",
+      "model": "claude-opus-4-6",
+      "description": "Designs vector search systems, similarity matching, and chunking strategies",
+      "file": "agents/embedding-specialist.md"
+    },
+    {
+      "id": "evaluation-specialist",
+      "name": "Evaluation Specialist",
+      "category": "ai-llm",
+      "model": "claude-opus-4-6",
+      "description": "Designs LLM evaluation frameworks, benchmarks, and quality metrics",
+      "file": "agents/evaluation-specialist.md"
+    },
+    {
+      "id": "event-marketing-planner",
+      "name": "Event Marketing Planner",
+      "category": "marketing",
+      "model": "claude-opus-4-6",
+      "description": "Plans webinars, conferences, and virtual events for lead generation and engagement",
+      "file": "agents/event-marketing-planner.md"
+    },
+    {
+      "id": "feature-spec-writer",
+      "name": "Feature Spec Writer",
+      "category": "product",
+      "model": "claude-opus-4-6",
+      "description": "Writes detailed feature specifications with edge cases and acceptance criteria",
+      "file": "agents/feature-spec-writer.md"
+    },
+    {
+      "id": "feedback-analyst",
+      "name": "Feedback Analyst",
+      "category": "product",
+      "model": "claude-opus-4-6",
+      "description": "Analyzes NPS data, feature requests, support tickets, and user sentiment",
+      "file": "agents/feedback-analyst.md"
+    },
+    {
+      "id": "financial-modeler",
+      "name": "Financial Modeler",
+      "category": "business",
+      "model": "claude-opus-4-6",
+      "description": "Builds revenue models, P&L statements, cash flow forecasts, and unit economics analyses with transparent assumptions",
+      "file": "agents/financial-modeler.md"
+    },
+    {
+      "id": "fine-tuning-specialist",
+      "name": "Fine-Tuning Specialist",
+      "category": "ai-llm",
+      "model": "claude-opus-4-6",
+      "description": "Prepares datasets, fine-tunes models, evaluates results, and manages deployment",
+      "file": "agents/fine-tuning-specialist.md"
+    },
+    {
+      "id": "frontend-testing-engineer",
+      "name": "Frontend Testing Engineer",
+      "category": "frontend",
+      "model": "claude-opus-4-6",
+      "description": "Implements frontend tests with Jest, Testing Library, Cypress, and Playwright",
+      "file": "agents/frontend-testing-engineer.md"
+    },
+    {
+      "id": "fundraising-strategist",
+      "name": "Fundraising Strategist",
+      "category": "startup",
+      "model": "claude-opus-4-6",
+      "description": "Plans fundraising rounds, investor targeting, and term sheet negotiation",
+      "file": "agents/fundraising-strategist.md"
+    },
+    {
+      "id": "git-workflow-advisor",
+      "name": "Git Workflow Advisor",
+      "category": "engineering",
+      "model": "claude-opus-4-6",
+      "description": "Designs branching strategies, commit conventions, and merge workflows",
+      "file": "agents/git-workflow-advisor.md"
+    },
+    {
+      "id": "go-to-market-strategist",
+      "name": "Go-to-Market Strategist",
+      "category": "startup",
+      "model": "claude-opus-4-6",
+      "description": "Creates GTM playbooks, channel strategies, and product launch plans",
+      "file": "agents/go-to-market-strategist.md"
+    },
+    {
+      "id": "growth-product-manager",
+      "name": "Growth Product Manager",
+      "category": "product",
+      "model": "claude-opus-4-6",
+      "description": "Designs growth loops, optimizes retention funnels, and drives activation metrics",
+      "file": "agents/growth-product-manager.md"
+    },
+    {
+      "id": "hiring-manager-advisor",
+      "name": "Hiring Manager Advisor",
+      "category": "business",
+      "model": "claude-opus-4-6",
+      "description": "Helps hiring managers craft job descriptions, design interview processes, build scorecards, and make structured hiring decisions",
+      "file": "agents/hiring-manager-advisor.md"
+    },
+    {
+      "id": "incident-forensics-analyst",
+      "name": "Incident Forensics Analyst",
+      "category": "security",
+      "model": "claude-opus-4-6",
+      "description": "Performs log analysis, breach investigation, and digital evidence collection",
+      "file": "agents/incident-forensics-analyst.md"
+    },
+    {
+      "id": "incident-response-coordinator",
+      "name": "Incident Response Coordinator",
+      "category": "devops",
+      "model": "claude-opus-4-6",
+      "description": "Manages incident response with runbooks, postmortems, and on-call processes",
+      "file": "agents/incident-response-coordinator.md"
+    },
+    {
+      "id": "influencer-marketing-strategist",
+      "name": "Influencer Marketing Strategist",
+      "category": "marketing",
+      "model": "claude-opus-4-6",
+      "description": "Expert influencer marketing strategist specializing in creator partnerships, campaign management, performance measurement, and authentic brand-creator alignment strategies.",
+      "file": "agents/influencer-marketing-strategist.md"
+    },
+    {
+      "id": "instagram-strategist",
+      "name": "Instagram Strategist",
+      "category": "social-media",
+      "model": "claude-opus-4-6",
+      "description": "Plans Instagram content strategies including feed aesthetics, Reels scripts, Stories sequences, caption writing, and hashtag optimization for growth and engagement",
+      "file": "agents/instagram-strategist.md"
+    },
+    {
+      "id": "investor-update-writer",
+      "name": "Investor Update Writer",
+      "category": "startup",
+      "model": "claude-opus-4-6",
+      "description": "Writes monthly investor updates with KPIs, narratives, and asks",
+      "file": "agents/investor-update-writer.md"
+    },
+    {
+      "id": "knowledge-base-architect",
+      "name": "Knowledge Base Architect",
+      "category": "ai-llm",
+      "model": "claude-opus-4-6",
+      "description": "Designs RAG knowledge pipelines, document indexing, and retrieval systems",
+      "file": "agents/knowledge-base-architect.md"
+    },
+    {
+      "id": "kubernetes-engineer",
+      "name": "Kubernetes Engineer",
+      "category": "devops",
+      "model": "claude-opus-4-6",
+      "description": "Designs Kubernetes manifests, Helm charts, and cluster management strategies",
+      "file": "agents/kubernetes-engineer.md"
+    },
+    {
+      "id": "landing-page-copywriter",
+      "name": "Landing Page Copywriter",
+      "category": "copywriting",
+      "model": "claude-opus-4-6",
+      "description": "Writes high-converting landing page copy including headlines, hero sections, benefit blocks, social proof, objection handling, and CTAs optimized for specific conversion goals.",
+      "file": "agents/landing-page-copywriter.md"
+    },
+    {
+      "id": "lean-canvas-builder",
+      "name": "Lean Canvas Builder",
+      "category": "startup",
+      "model": "claude-opus-4-6",
+      "description": "Creates lean business canvases with hypothesis validation and iteration frameworks",
+      "file": "agents/lean-canvas-builder.md"
+    },
+    {
+      "id": "linkedin-content-creator",
+      "name": "LinkedIn Content Creator",
+      "category": "social-media",
+      "model": "claude-opus-4-6",
+      "description": "Creates professional LinkedIn posts, thought leadership content, carousel scripts, and personal brand strategies for executives and professionals",
+      "file": "agents/linkedin-content-creator.md"
+    },
+    {
+      "id": "linux-sysadmin",
+      "name": "Linux Sysadmin",
+      "category": "devops",
+      "model": "claude-opus-4-6",
+      "description": "Manages Linux servers with hardening, performance tuning, and automation",
+      "file": "agents/linux-sysadmin.md"
+    },
+    {
+      "id": "llm-application-architect",
+      "name": "LLM Application Architect",
+      "category": "ai-llm",
+      "model": "claude-opus-4-6",
+      "description": "Designs RAG systems, AI agents, tool use patterns, and LLM orchestration",
+      "file": "agents/llm-application-architect.md"
+    },
+    {
+      "id": "marketing-analytics-specialist",
+      "name": "Marketing Analytics Specialist",
+      "category": "marketing",
+      "model": "claude-opus-4-6",
+      "description": "Expert marketing analytics specialist focused on attribution modeling, ROI analysis, marketing dashboard design, and data-driven decision frameworks for marketing performance optimization.",
+      "file": "agents/marketing-analytics-specialist.md"
+    },
+    {
+      "id": "marketing-automation-specialist",
+      "name": "Marketing Automation Specialist",
+      "category": "marketing",
+      "model": "claude-opus-4-6",
+      "description": "Designs HubSpot and Marketo workflows, lead scoring, and automated nurture campaigns",
+      "file": "agents/marketing-automation-specialist.md"
+    },
+    {
+      "id": "meeting-facilitator",
+      "name": "Meeting Facilitator",
+      "category": "business",
+      "model": "claude-opus-4-6",
+      "description": "Designs meeting agendas, facilitates structured decision-making, captures action items, and improves meeting culture",
+      "file": "agents/meeting-facilitator.md"
+    },
+    {
+      "id": "microservices-designer",
+      "name": "Microservices Designer",
+      "category": "engineering",
+      "model": "claude-opus-4-6",
+      "description": "Designs service boundaries, communication patterns, and distributed system architectures",
+      "file": "agents/microservices-designer.md"
+    },
+    {
+      "id": "ml-ops-engineer",
+      "name": "MLOps Engineer",
+      "category": "ai-llm",
+      "model": "claude-opus-4-6",
+      "description": "Manages ML model deployment, monitoring, versioning, and production pipelines",
+      "file": "agents/ml-ops-engineer.md"
+    },
+    {
+      "id": "mobile-web-specialist",
+      "name": "Mobile Web Specialist",
+      "category": "frontend",
+      "model": "claude-opus-4-6",
+      "description": "Builds PWAs, responsive experiences, and mobile-optimized web applications",
+      "file": "agents/mobile-web-specialist.md"
+    },
+    {
+      "id": "monitoring-engineer",
+      "name": "Monitoring Engineer",
+      "category": "devops",
+      "model": "claude-opus-4-6",
+      "description": "Designs observability systems with metrics, alerting, dashboards, and SLOs",
+      "file": "agents/monitoring-engineer.md"
+    },
+    {
+      "id": "monorepo-architect",
+      "name": "Monorepo Architect",
+      "category": "engineering",
+      "model": "claude-opus-4-6",
+      "description": "Designs monorepo structures, workspace management, and build optimization",
+      "file": "agents/monorepo-architect.md"
+    },
+    {
+      "id": "multimodal-ai-specialist",
+      "name": "Multimodal AI Specialist",
+      "category": "ai-llm",
+      "model": "claude-opus-4-6",
+      "description": "Builds vision, audio, and cross-modal AI applications",
+      "file": "agents/multimodal-ai-specialist.md"
+    },
+    {
+      "id": "mvp-scoper",
+      "name": "MVP Scoper",
+      "category": "startup",
+      "model": "claude-opus-4-6",
+      "description": "Prioritizes features for MVPs, makes build-vs-buy decisions, and cuts scope ruthlessly",
+      "file": "agents/mvp-scoper.md"
+    },
+    {
+      "id": "networking-specialist",
+      "name": "Networking Specialist",
+      "category": "devops",
+      "model": "claude-opus-4-6",
+      "description": "Designs DNS, load balancing, CDN, and network architecture",
+      "file": "agents/networking-specialist.md"
+    },
+    {
+      "id": "newsletter-architect",
+      "name": "Newsletter Architect",
+      "category": "email",
+      "model": "claude-opus-4-6",
+      "description": "Designs and optimizes newsletter programs including content strategy, editorial calendars, subscriber acquisition, layout architecture, and growth tactics for recurring email publications.",
+      "file": "agents/newsletter-architect.md"
+    },
+    {
+      "id": "nextjs-developer",
+      "name": "Next.js Developer",
+      "category": "frontend",
+      "model": "claude-opus-4-6",
+      "description": "Expert in Next.js App Router, SSR/SSG, API routes, and middleware",
+      "file": "agents/nextjs-developer.md"
+    },
+    {
+      "id": "okr-coach",
+      "name": "OKR Coach",
+      "category": "business",
+      "model": "claude-opus-4-6",
+      "description": "Guides teams through objective setting, key result definition, cross-team alignment, and structured OKR review cycles",
+      "file": "agents/okr-coach.md"
+    },
+    {
+      "id": "onboarding-designer",
+      "name": "Onboarding Designer",
+      "category": "product",
+      "model": "claude-opus-4-6",
+      "description": "Designs first-run experiences, activation flows, and user onboarding journeys",
+      "file": "agents/onboarding-designer.md"
+    },
+    {
+      "id": "operations-optimizer",
+      "name": "Operations Optimizer",
+      "category": "business",
+      "model": "claude-opus-4-6",
+      "description": "Identifies process bottlenecks, designs efficient workflows, and recommends automation opportunities to improve operational performance",
+      "file": "agents/operations-optimizer.md"
+    },
+    {
+      "id": "paid-ads-specialist",
+      "name": "Paid Ads Specialist",
+      "category": "marketing",
+      "model": "claude-opus-4-6",
+      "description": "Expert paid advertising specialist managing Google Ads, Meta Ads, and programmatic campaigns with focus on campaign structure optimization, ROAS maximization, and cross-channel budget allocation.",
+      "file": "agents/paid-ads-specialist.md"
+    },
+    {
+      "id": "partnership-developer",
+      "name": "Partnership Developer",
+      "category": "business",
+      "model": "claude-opus-4-6",
+      "description": "Designs partner strategies, co-marketing programs, integration partnerships, and channel partner frameworks",
+      "file": "agents/partnership-developer.md"
+    },
+    {
+      "id": "penetration-tester",
+      "name": "Penetration Tester",
+      "category": "security",
+      "model": "claude-opus-4-6",
+      "description": "Conducts authorized security testing and vulnerability assessment",
+      "file": "agents/penetration-tester.md"
+    },
+    {
+      "id": "performance-optimizer",
+      "name": "Performance Optimizer",
+      "category": "engineering",
+      "model": "claude-opus-4-6",
+      "description": "Profiles applications, identifies bottlenecks, and implements targeted optimizations",
+      "file": "agents/performance-optimizer.md"
+    },
+    {
+      "id": "pitch-deck-creator",
+      "name": "Pitch Deck Creator",
+      "category": "startup",
+      "model": "claude-opus-4-6",
+      "description": "Creates compelling investor pitch decks with storytelling and financial narratives",
+      "file": "agents/pitch-deck-creator.md"
+    },
+    {
+      "id": "platform-engineer",
+      "name": "Platform Engineer",
+      "category": "devops",
+      "model": "claude-opus-4-6",
+      "description": "Builds internal developer platforms and self-service infrastructure tooling",
+      "file": "agents/platform-engineer.md"
+    },
+    {
+      "id": "podcast-producer",
+      "name": "Podcast Producer",
+      "category": "social-media",
+      "model": "claude-opus-4-6",
+      "description": "Plans podcast shows from concept to production including format design, episode structures, guest outreach templates, show notes, and audience growth strategies",
+      "file": "agents/podcast-producer.md"
+    },
+    {
+      "id": "press-release-writer",
+      "name": "Press Release Writer",
+      "category": "copywriting",
+      "model": "claude-opus-4-6",
+      "description": "Writes news announcements, media pitches, and PR communications",
+      "file": "agents/press-release-writer.md"
+    },
+    {
+      "id": "pricing-strategist",
+      "name": "Pricing Strategist",
+      "category": "product",
+      "model": "claude-opus-4-6",
+      "description": "Designs pricing models, packaging strategies, and monetization frameworks",
+      "file": "agents/pricing-strategist.md"
+    },
+    {
+      "id": "procurement-analyst",
+      "name": "Procurement Analyst",
+      "category": "business",
+      "model": "claude-opus-4-6",
+      "description": "Evaluates vendors, designs RFP processes, conducts cost comparisons, and recommends procurement decisions based on total cost of ownership",
+      "file": "agents/procurement-analyst.md"
+    },
+    {
+      "id": "product-analyst",
+      "name": "Product Analyst",
+      "category": "product",
+      "model": "claude-opus-4-6",
+      "description": "Analyzes product metrics, A/B tests, funnels, and user behavior",
+      "file": "agents/product-analyst.md"
+    },
+    {
+      "id": "product-copywriter",
+      "name": "Product Copywriter",
+      "category": "product",
+      "model": "claude-opus-4-6",
+      "description": "Writes UI copy, microcopy, error messages, and onboarding text",
+      "file": "agents/product-copywriter.md"
+    },
+    {
+      "id": "product-launch-coordinator",
+      "name": "Product Launch Coordinator",
+      "category": "product",
+      "model": "claude-opus-4-6",
+      "description": "Manages launch checklists, GTM coordination, and cross-team release planning",
+      "file": "agents/product-launch-coordinator.md"
+    },
+    {
+      "id": "product-manager",
+      "name": "Product Manager",
+      "category": "product",
+      "model": "claude-opus-4-6",
+      "description": "Creates PRDs, prioritizes features, and builds product roadmaps",
+      "file": "agents/product-manager.md"
+    },
+    {
+      "id": "prompt-engineer",
+      "name": "Prompt Engineer",
+      "category": "ai-llm",
+      "model": "claude-opus-4-6",
+      "description": "Designs effective prompts with chain-of-thought, few-shot, and structured patterns",
+      "file": "agents/prompt-engineer.md"
+    },
+    {
+      "id": "python-data-scientist",
+      "name": "Python Data Scientist",
+      "category": "data",
+      "model": "claude-opus-4-6",
+      "description": "Performs data analysis with Pandas, NumPy, scikit-learn, and statistical methods",
+      "file": "agents/python-data-scientist.md"
+    },
+    {
+      "id": "react-specialist",
+      "name": "React Specialist",
+      "category": "frontend",
+      "model": "claude-opus-4-6",
+      "description": "Expert in React patterns, hooks, state management, and component architecture",
+      "file": "agents/react-specialist.md"
+    },
+    {
+      "id": "reddit-marketing-specialist",
+      "name": "Reddit Marketing Specialist",
+      "category": "social-media",
+      "model": "claude-opus-4-6",
+      "description": "Develops authentic Reddit marketing strategies including community engagement, subreddit identification, AMA planning, and organic brand building while respecting Reddit culture",
+      "file": "agents/reddit-marketing-specialist.md"
+    },
+    {
+      "id": "refactoring-coach",
+      "name": "Refactoring Coach",
+      "category": "engineering",
+      "model": "claude-opus-4-6",
+      "description": "Identifies code smells and plans safe, incremental refactoring strategies",
+      "file": "agents/refactoring-coach.md"
+    },
+    {
+      "id": "release-manager",
+      "name": "Release Manager",
+      "category": "devops",
+      "model": "claude-opus-4-6",
+      "description": "Plans releases, manages feature flags, and designs rollback strategies",
+      "file": "agents/release-manager.md"
+    },
+    {
+      "id": "sales-copywriter",
+      "name": "Sales Copywriter",
+      "category": "copywriting",
+      "model": "claude-opus-4-6",
+      "description": "Writes high-converting sales pages, VSLs, and objection-handling copy",
+      "file": "agents/sales-copywriter.md"
+    },
+    {
+      "id": "sales-strategist",
+      "name": "Sales Strategist",
+      "category": "business",
+      "model": "claude-opus-4-6",
+      "description": "Designs sales processes, pipeline strategies, qualification frameworks, and closing playbooks for B2B and B2C teams",
+      "file": "agents/sales-strategist.md"
+    },
+    {
+      "id": "scriptwriter",
+      "name": "Scriptwriter",
+      "category": "copywriting",
+      "model": "claude-opus-4-6",
+      "description": "Writes video scripts, podcast outlines, and webinar presentation scripts",
+      "file": "agents/scriptwriter.md"
+    },
+    {
+      "id": "secrets-manager",
+      "name": "Secrets Manager",
+      "category": "security",
+      "model": "claude-opus-4-6",
+      "description": "Manages secrets, environment variables, vault configuration, and rotation policies",
+      "file": "agents/secrets-manager.md"
+    },
+    {
+      "id": "security-auditor",
+      "name": "Security Auditor",
+      "category": "security",
+      "model": "claude-opus-4-6",
+      "description": "Audits code and infrastructure for OWASP vulnerabilities and security best practices",
+      "file": "agents/security-auditor.md"
+    },
+    {
+      "id": "seo-strategist",
+      "name": "SEO Strategist",
+      "category": "marketing",
+      "model": "claude-opus-4-6",
+      "description": "Expert SEO strategist specializing in keyword research, on-page optimization, technical SEO audits, and search ranking improvement strategies across organic channels.",
+      "file": "agents/seo-strategist.md"
+    },
+    {
+      "id": "search-engine-submission-specialist",
+      "name": "Search Engine Submission Specialist",
+      "category": "marketing",
+      "model": "claude-opus-4-6",
+      "description": "Handles end-to-end search engine submission to Google, Bing, and other engines including sitemap validation, indexing requests, verification, and monitoring.",
+      "file": "agents/search-engine-submission-specialist.md"
+    },
+    {
+      "id": "social-media-analytics-specialist",
+      "name": "Social Media Analytics Specialist",
+      "category": "social-media",
+      "model": "claude-opus-4-6",
+      "description": "Analyzes social media performance metrics, builds reporting frameworks, sets benchmarks, and translates data into actionable content strategy recommendations",
+      "file": "agents/social-media-analytics-specialist.md"
+    },
+    {
+      "id": "social-media-calendar-planner",
+      "name": "Social Media Calendar Planner",
+      "category": "social-media",
+      "model": "claude-opus-4-6",
+      "description": "Builds comprehensive social media content calendars with platform-specific scheduling, content themes, posting cadences, and campaign integration across multiple channels",
+      "file": "agents/social-media-calendar-planner.md"
+    },
+    {
+      "id": "social-media-crisis-manager",
+      "name": "Social Media Crisis Manager",
+      "category": "social-media",
+      "model": "claude-opus-4-6",
+      "description": "Develops crisis response playbooks, manages reputation threats on social media, drafts holding statements, and guides brands through PR incidents with structured escalation frameworks",
+      "file": "agents/social-media-crisis-manager.md"
+    },
+    {
+      "id": "spreadsheet-automation-expert",
+      "name": "Spreadsheet Automation Expert",
+      "category": "data",
+      "model": "claude-opus-4-6",
+      "description": "Automates Google Sheets and Excel with advanced formulas, scripts, and macros",
+      "file": "agents/spreadsheet-automation-expert.md"
+    },
+    {
+      "id": "sql-expert",
+      "name": "SQL Expert",
+      "category": "data",
+      "model": "claude-opus-4-6",
+      "description": "Writes complex SQL queries with optimization, window functions, and CTEs",
+      "file": "agents/sql-expert.md"
+    },
+    {
+      "id": "startup-advisor",
+      "name": "Startup Advisor",
+      "category": "startup",
+      "model": "claude-opus-4-6",
+      "description": "Provides strategic guidance on business model validation, market fit, and startup strategy",
+      "file": "agents/startup-advisor.md"
+    },
+    {
+      "id": "startup-legal-advisor",
+      "name": "Startup Legal Advisor",
+      "category": "startup",
+      "model": "claude-opus-4-6",
+      "description": "Guides incorporation, IP protection, contracts, and regulatory compliance basics",
+      "file": "agents/startup-legal-advisor.md"
+    },
+    {
+      "id": "state-management-advisor",
+      "name": "State Management Advisor",
+      "category": "frontend",
+      "model": "claude-opus-4-6",
+      "description": "Advises on state management architecture using Redux, Zustand, Jotai, and React patterns",
+      "file": "agents/state-management-advisor.md"
+    },
+    {
+      "id": "streaming-data-engineer",
+      "name": "Streaming Data Engineer",
+      "category": "data",
+      "model": "claude-opus-4-6",
+      "description": "Builds Kafka pipelines, real-time processing, and event-driven data systems",
+      "file": "agents/streaming-data-engineer.md"
+    },
+    {
+      "id": "supply-chain-security",
+      "name": "Supply Chain Security",
+      "category": "security",
+      "model": "claude-opus-4-6",
+      "description": "Protects software supply chain with dependency scanning, SBOM, and signing",
+      "file": "agents/supply-chain-security.md"
+    },
+    {
+      "id": "technical-cofounder-advisor",
+      "name": "Technical Co-Founder Advisor",
+      "category": "startup",
+      "model": "claude-opus-4-6",
+      "description": "Advises on tech stack selection, technical hiring, and architecture for startups",
+      "file": "agents/technical-cofounder-advisor.md"
+    },
+    {
+      "id": "technical-debt-analyst",
+      "name": "Technical Debt Analyst",
+      "category": "engineering",
+      "model": "claude-opus-4-6",
+      "description": "Identifies, quantifies, and prioritizes technical debt for strategic remediation",
+      "file": "agents/technical-debt-analyst.md"
+    },
+    {
+      "id": "technical-writer",
+      "name": "Technical Writer",
+      "category": "copywriting",
+      "model": "claude-opus-4-6",
+      "description": "Creates clear, accurate technical documentation including API guides, tutorials, developer docs, integration guides, and reference materials for technical audiences.",
+      "file": "agents/technical-writer.md"
+    },
+    {
+      "id": "terraform-engineer",
+      "name": "Terraform Engineer",
+      "category": "devops",
+      "model": "claude-opus-4-6",
+      "description": "Designs infrastructure as code with Terraform, state management, and module design",
+      "file": "agents/terraform-engineer.md"
+    },
+    {
+      "id": "testing-strategist",
+      "name": "Testing Strategist",
+      "category": "engineering",
+      "model": "claude-opus-4-6",
+      "description": "Designs comprehensive test strategies, coverage plans, and testing patterns",
+      "file": "agents/testing-strategist.md"
+    },
+    {
+      "id": "threat-modeler",
+      "name": "Threat Modeler",
+      "category": "security",
+      "model": "claude-opus-4-6",
+      "description": "Performs STRIDE threat modeling, attack tree analysis, and risk assessment",
+      "file": "agents/threat-modeler.md"
+    },
+    {
+      "id": "tiktok-content-strategist",
+      "name": "TikTok Content Strategist",
+      "category": "social-media",
+      "model": "claude-opus-4-6",
+      "description": "Develops TikTok content strategies including trend surfing, hook writing, video scripts, sound selection, and audience growth tactics for creators and brands",
+      "file": "agents/tiktok-content-strategist.md"
+    },
+    {
+      "id": "transactional-email-designer",
+      "name": "Transactional Email Designer",
+      "category": "email",
+      "model": "claude-opus-4-6",
+      "description": "Designs and optimizes transactional emails including order confirmations, shipping notifications, password resets, account alerts, and system notifications that are clear, trustworthy, and on-brand.",
+      "file": "agents/transactional-email-designer.md"
+    },
+    {
+      "id": "twitter-strategist",
+      "name": "Twitter/X Strategist",
+      "category": "social-media",
+      "model": "claude-opus-4-6",
+      "description": "Crafts viral Twitter/X threads, engagement-driven posts, growth strategies, and audience-building playbooks for personal brands and businesses",
+      "file": "agents/twitter-strategist.md"
+    },
+    {
+      "id": "typescript-expert",
+      "name": "TypeScript Expert",
+      "category": "frontend",
+      "model": "claude-opus-4-6",
+      "description": "Advanced TypeScript patterns, generics, type safety, and migration guidance",
+      "file": "agents/typescript-expert.md"
+    },
+    {
+      "id": "ui-component-builder",
+      "name": "UI Component Builder",
+      "category": "frontend",
+      "model": "claude-opus-4-6",
+      "description": "Builds reusable, accessible UI components with Storybook documentation",
+      "file": "agents/ui-component-builder.md"
+    },
+    {
+      "id": "unit-economics-analyst",
+      "name": "Unit Economics Analyst",
+      "category": "startup",
+      "model": "claude-opus-4-6",
+      "description": "Analyzes CAC, LTV, payback periods, and unit-level profitability",
+      "file": "agents/unit-economics-analyst.md"
+    },
+    {
+      "id": "user-researcher",
+      "name": "User Researcher",
+      "category": "product",
+      "model": "claude-opus-4-6",
+      "description": "Designs interview scripts, surveys, user personas, and research plans",
+      "file": "agents/user-researcher.md"
+    },
+    {
+      "id": "ux-strategist",
+      "name": "UX Strategist",
+      "category": "product",
+      "model": "claude-opus-4-6",
+      "description": "Designs user flows, wireframes, information architecture, and usability guidelines",
+      "file": "agents/ux-strategist.md"
+    },
+    {
+      "id": "ux-writer",
+      "name": "UX Writer",
+      "category": "copywriting",
+      "model": "claude-opus-4-6",
+      "description": "Crafts microcopy, error messages, empty states, tooltips, and in-app guidance",
+      "file": "agents/ux-writer.md"
+    },
+    {
+      "id": "video-marketing-strategist",
+      "name": "Video Marketing Strategist",
+      "category": "marketing",
+      "model": "claude-opus-4-6",
+      "description": "Plans YouTube strategy, video content calendars, and video SEO optimization",
+      "file": "agents/video-marketing-strategist.md"
+    },
+    {
+      "id": "web-performance-analyst",
+      "name": "Web Performance Analyst",
+      "category": "frontend",
+      "model": "claude-opus-4-6",
+      "description": "Optimizes Core Web Vitals, bundle size, and frontend loading performance",
+      "file": "agents/web-performance-analyst.md"
+    },
+    {
+      "id": "youtube-strategist",
+      "name": "YouTube Strategist",
+      "category": "social-media",
+      "model": "claude-opus-4-6",
+      "description": "Develops YouTube channel strategies including video SEO, title and thumbnail optimization, audience retention tactics, and content planning for long-form and Shorts",
+      "file": "agents/youtube-strategist.md"
+    }
+  ]
 }
